@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: SmartRecruiters Plugin by ARDOR GROUP
+Plugin Name: SmartRecruiters Plugin
 Description: Plugin 
 Version: 1.1
-Author: Alex Shandor | <a href="https://www.amselrehhase.de" target="_blank">amselrehhase - form is function</a>
+Author: Alex Shandor
 License: MIT
 */
 
