@@ -1,0 +1,215 @@
+@import '../config';
+
+$font-size: 16px;
+$button-shadow: 4px;
+$margin-top: 2.5em;
+$list-point-size: 6px;
+$list-point-size-half: $list-point-size * 0.5;
+
+.smartrecruiters {
+  box-sizing: border-box;
+  font-size: $font-size;
+  font-weight: normal;
+  line-height: 1;
+  display: block;
+  width: 100%;
+  * {
+    box-sizing: border-box;
+    font-weight: normal;
+    line-height: 1;
+  }
+  h1 {
+    color: var(--smartrecruiters-color);
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    @include media-768 {
+      font-size: 1.8em;
+    }
+    @include media-576 {
+      font-size: 1.5em;
+    }
+  }
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    li {
+      list-style: none;
+      margin: 0.5em 0 0 0;
+      line-height: 1.2;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+      padding-left: 1.2em;
+      &:before {
+        content: '';
+        display: block;
+        width: $list-point-size;
+        height: $list-point-size;
+        border-radius: $list-point-size;
+        background-color: var(--smartrecruiters-color);
+        position: absolute;
+        left: 0;
+        top: calc(50% - #{$list-point-size-half});
+        z-index: 1;
+      }
+    }
+  }
+  strong,
+  strong > * {
+    font-weight: 600;
+  }
+  p {
+    line-height: 1.4;
+    font-weight: 300;
+    padding-bottom: 0;
+    margin-bottom: 1.5em;
+  }
+  &__section,
+  &__bottom {
+    margin-top: $margin-top;
+  }
+  &__block {
+    margin-top: $margin-top * 0.5;
+  }
+  &__header,
+  &__content,
+  &__section,
+  &__bottom {
+    display: block;
+    width: 100%;
+  }
+  &__center {
+    text-align: center;
+    justify-content: center;
+  }
+  &__lines {
+    border-top: 1px solid var(--smartrecruiters-color-line);
+    border-bottom: 1px solid var(--smartrecruiters-color-line);
+    padding-top: $margin-top;
+    padding-bottom: $margin-top;
+  }
+  &__subtitle {
+    color: var(--smartrecruiters-color-second);
+    display: flex;
+    margin-top: 4px;
+    & > * {
+      font-weight: 300;
+      &:not(:first-child) {
+        padding-left: 1em * 0.5;
+      }
+      &:not(:last-child) {
+        padding-right: 1em * 0.5;
+        border-right: 1px solid var(--smartrecruiters-color-second);
+      }
+    }
+  }
+  &__columns {
+    display: flex;
+    width: 100%;
+    @include media-768 {
+      flex-wrap: wrap;
+    }
+    & > * {
+      min-width: 50%;
+      &:not(:first-child) {
+        padding-left: 2em;
+      }
+      &:not(:last-child) {
+        padding-right: 2em;
+      }
+      @include media-768 {
+        &:not(:first-child) {
+          padding-left: 0;
+          margin-top: $margin-top * 0.4;
+        }
+        &:not(:last-child) {
+          padding-right: 0;
+        }
+      }
+    }
+    &--two {
+    }
+  }
+  &__block {
+    display: flex;
+    width: 100%;
+    @include media-576 {
+      flex-wrap: wrap;
+    }
+  }
+  &__section-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    @include media-576 {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+    & + * {
+      margin-top: $margin-top * 0.3;
+    }
+    &--color {
+      color: var(--smartrecruiters-color);
+    }
+  }
+  &__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+    max-width: 310px;
+    min-height: 70px;
+    font-weight: 600;
+    box-shadow: 0 $button-shadow $button-shadow rgba(0, 0, 0, 0.5);
+    transition: all 0.1s linear;
+    position: relative;
+    top: 0;
+    margin: 0.7em 1.25em;
+    @include media-576 {
+      min-width: 250px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &:hover,
+    &:focus {
+      top: $button-shadow;
+      box-shadow: none;
+    }
+    &--main {
+      background-color:  var(--smartrecruiters-color);
+      color: var(--smartrecruiters-color-light);
+      &:hover,
+      &:focus {
+        background-color:  var(--smartrecruiters-color);
+        color: var(--smartrecruiters-color-light);
+      }
+      @include media-576 {
+        order: 2;
+      }
+    }
+    &--custom {
+      background-color:  var(--smartrecruiters-custom-button-color);
+      color: var(--smartrecruiters-custom-button-text-color);
+      &:hover,
+      &:focus {
+        background-color:  var(--smartrecruiters-custom-button-color);
+        color: var(--smartrecruiters-custom-button-text-color);
+      }
+      @include media-576 {
+        order: 1;
+      }
+    }
+  }
+}

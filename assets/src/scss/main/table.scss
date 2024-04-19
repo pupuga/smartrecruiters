@@ -1,0 +1,179 @@
+@import '../config';
+
+$font-size: 16px;
+
+.smartrecruiters {
+  font-size: $font-size;
+  font-weight: normal;
+  line-height: 1;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  * {
+    font-weight: normal;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+  input,
+  select {
+    font-size: $font-size * 0.75;
+    height: 36px;
+    border: 1px solid var(--smartrecruiters-table-color-border);
+    border-radius: 0;
+    outline:none !important;
+    width: 100%;
+    &:focus {
+      border-color: var(--smartrecruiters-table-color-form);
+    }
+  }
+  input {
+    background-color: white;
+    padding: 0 1em;
+  }
+  &__select {
+    position: relative;
+    z-index: 1;
+    &:before {
+      position: absolute;
+      z-index: 1;
+      top: calc(50% - 3px);
+      right: 1em * 0.5;
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid var(--smartrecruiters-table-color-form);
+    }
+  }
+  select {
+    background-color: var(--smartrecruiters-table-color-second);
+    appearance:none;
+    padding: 0 3em 0 1em;
+    option {
+      background-color: white;
+    }
+  }
+  &__templates {
+    display: none !important;
+  }
+  &__filter {
+    display: flex;
+    width: 100%;
+    background-color: var(--smartrecruiters-table-color-second);
+    padding: 5px;
+    border: 1px solid var(--smartrecruiters-table-color-border);
+    @include media-480 {
+      flex-wrap: wrap;
+    }
+    & > * {
+      width: 50%;
+      max-width: 250px;
+      @include media-480 {
+        width: 100%;
+        max-width: none;
+      }
+      &:not(:last-child) {
+        margin-right: 1em * 0.6;
+        @include media-480 {
+          margin-right: 0;
+          margin-bottom: 1em * 0.3;
+        }
+      }
+    }
+  }
+  &__table {
+    margin-top: 1em * 0.5;
+  }
+  table {
+    font-size: 1em;
+    width: 100%;
+    border: none;
+    * {
+      transition: none !important;
+      @include media-768 {
+        font-size: 14px;
+      }
+    }
+    th,
+    td {
+      border: none;
+      padding: 1em * 0.86;
+      vertical-align: middle;
+      color: var(--smartrecruiters-table-color-text);
+      @include media-768 {
+        &:nth-child(2) {
+          display: none !important;
+        }
+      }
+      @include media-576 {
+        &:not(:first-child) {
+          display: none !important;
+        }
+      }
+    }
+    tr {
+      &:first-child {
+        th {
+          background-color: var(--smartrecruiters-table-color-header);
+          color: white;
+        }
+      }
+      &:last-child {
+         td {
+           border-bottom: 1px solid var(--smartrecruiters-table-color-row-darker);
+         }
+      }
+      &:nth-child(even) {
+        td {
+          background-color: var(--smartrecruiters-table-color-row-darker);
+        }
+      }
+      &:nth-child(odd) {
+        background-color: var(--smartrecruiters-table-color-row-lighter);
+      }
+      &:hover {
+        td {
+          background-color: var(--smartrecruiters-table-color);
+          color: var(--smartrecruiters-table-color-text-hover);
+          &:first-child {
+            border-left-color: var(--smartrecruiters-table-color);
+          }
+          &:last-child {
+            border-right-color: var(--smartrecruiters-table-color);
+          }
+        }
+        &:last-child {
+          td {
+            border-bottom-color: var(--smartrecruiters-table-color);
+          }
+        }
+        a {
+          color: var(--smartrecruiters-table-color-text-hover);
+        }
+      }
+    }
+    td {
+      font-weight: 300;
+      background-color: white;
+      cursor: pointer;
+      &:first-child {
+        border-left: 1px solid var(--smartrecruiters-table-color-row-darker);
+      }
+      &:last-child {
+        border-right: 1px solid var(--smartrecruiters-table-color-row-darker);
+      }
+    }
+    span {
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--smartrecruiters-table-color-text);
+      text-decoration: none !important;
+      background-color: transparent !important;
+    }
+    a {
+      display: none !important;
+    }
+  }
+}
